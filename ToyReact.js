@@ -9,6 +9,7 @@ class ElementWrapper {
         }
         if (name === 'className')
             this.root.setAttribute('class', value)
+        // name = 'class'
         this.root.setAttribute(name, value)
     }
     appendChild(vchild) {
@@ -65,6 +66,8 @@ export class Component {
 
         let vdom = this.render()
         vdom.mountTo(this.range)
+
+        // placeholder.parentNode.removeChild(placeholder)
 
     }
     appendChild(vchild) {
@@ -136,6 +139,6 @@ export let ToyReact = {
             range.setStart(element, 0)
             range.setEnd(element, 0)
         }
-        vdom.mountTo(element)
+        vdom.mountTo(range)
     }
 }
